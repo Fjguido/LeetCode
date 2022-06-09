@@ -9,18 +9,18 @@
 //stack method to push open character and pop to take out unmatched character
 
 var isValid = function(s) {
-    const stack = [];
-  const characters = { ')': '(', '}': '{', ']': '['};
-for (const char of s) {
-      
-    if (!characters[char]){
-       stack.push(char); 
-    } 
-    else if (stack.pop() !== characters[char]){
-        return false;
-    } 
-  }
-  return stack.length === 0;
+if (s.length % 2 !== 0) return false
+    
+    let parentheses = {"{" : "}", "(": ")", "[" : "]"}
+    let parenthesesArray = []
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] in parentheses) {
+            parenthesesArray.push(s[i])
+        } else if (parentheses[parenthesesArray.pop()] !== s[i]) {
+            return false
+        }
+    }
+    return parenthesesArray.length === 0 
     
 }
 

@@ -11,5 +11,7 @@ const comp = {};
         }
         comp[target-nums[i]] = i
     }
-  
+    
 };
+
+

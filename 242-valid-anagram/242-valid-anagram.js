@@ -5,6 +5,7 @@
  */
 var isAnagram = function(stringA, stringB) {
     // Sanitizing
+    // dont understand this
   stringA = stringA.toLowerCase().replace(/[\W_]+/g, "");
   stringB = stringB.toLowerCase().replace(/[\W_]+/g, "");
 

@@ -3,30 +3,15 @@
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function(numbs, target) {
-let result = "";
-
-if (result === "") {
-  for (let i = 0; i < numbs.length; i++) {
-    for (let j = 0; j < numbs.length; j++) {
-       
-
-      if (i!== j) {
-
-        if (numbs[i] + numbs[j] === target) {
-            result=[j, i];
-
-        }
+var twoSum = function(nums, target) {
+for(let i = 0; i < nums.length; i++){
+      for(let j = i + 1; j < nums.length; j++){
+          if(nums[i] + nums[j] === target)
+          return [i, j]
       }
     }
-  }
+    
 }
-return result
-
-};
-
-
-
 
 
 

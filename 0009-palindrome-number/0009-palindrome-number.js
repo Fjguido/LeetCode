@@ -6,17 +6,17 @@
 // numbers need to be the same when read in reverse 
 // dont solve it without changing interger to a string
 var isPalindrome = function(x) {
-    if ( x < 0 || x % 10 === 0 && x !== 0) {
-        return false;
+    if (x < 0) return false;        // only positive number
+    if (x < 10) return true;        // for 1-9 cases
+    if (x % 10 === 0) return false; // in case of last 0 [3330, 123320, 1000, etc]
+    let rev = 0;                    // reversed number
+    while (x >= 10) {
+        let cur = x % 10;
+        rev = rev*10 + cur;
+        if (x === rev) return true; // check before changing
+        x = ~~(x / 10); // better replace for Math.floor(), bit operator '~' inverts all the bits in your number and in the process converts the number to an int
+        if (x === rev) return true; // check after changing
+        if (x < rev) return false;  // stop in case reversed number becomes greater than original value
     }
-    
-    let reverse_x = 0;
-    while (x > reverse_x) {
-        reverse_x = reverse_x * 10 + x % 10;
-        if (reverse_x === x) {
-            return true;
-        }
-        x = Math.floor(x / 10);
-    }
-    return reverse_x === x 
+    return false; // the longest case (diff in the middle) // [77778777, 10004001] 
 };

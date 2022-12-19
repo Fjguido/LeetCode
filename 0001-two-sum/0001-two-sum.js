@@ -3,16 +3,21 @@
  * @param {number} target
  * @return {number[]}
  */
-function twoSum(arr, target) {
-  const map = new Map();
-  for (let i = 0; i < arr.length; i++) {
-    const complement = target - arr[i];
-    if (map.has(complement)) {
-      return [map.get(complement), i];
+
+const twoSum = (arr, target) => {
+    let result = ""
+    if(result === ''){
+        for(i = 0; i < arr.length ; i++){
+            for(j = 0; j < arr.length; j++){
+                if(i !== j){
+                    if(arr[i] + arr[j] === target) {
+                        result = [i, j]
+                    }
+                }
+            }
+        }
     }
-    map.set(arr[i], i);
-  }
-  throw new Error("No two sum solution");
+    return result
 }
 
 

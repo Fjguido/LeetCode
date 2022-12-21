@@ -2,9 +2,6 @@
  * @param {number} x
  * @return {boolean}
  */
-
-// numbers need to be the same when read in reverse 
-// dont solve it without changing interger to a string
 var isPalindrome = function(x) {
     if (x < 0) return false;        // only positive number
     if (x < 10) return true;        // for 1-9 cases

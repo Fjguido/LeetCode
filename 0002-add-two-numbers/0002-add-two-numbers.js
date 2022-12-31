@@ -11,8 +11,7 @@
  * @return {ListNode}
  */
 var addTwoNumbers = function(l1, l2) {
-    
-    /* step() function recursively iterates through a ListNode linked list */
+     /* step() function recursively iterates through a ListNode linked list */
     const step = (l1, l2, carry=0) => {
         /* l1 or l2 can be null - double bang to cast to bool for null check */
         const sum = (!!l1 ? l1.val : 0) + (!!l2 ? l2.val : 0) + carry
